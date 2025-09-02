@@ -1,0 +1,18 @@
+:root {
+  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --bg-color: #131212;
+  --text-color: #333;
+  --accent-color: #333;
+  --button-bg: #e0e0e0;
+  --button-hover-bg: #c8c8c8;
+  --button-active-bg: #333;
+  --button-active-color: #fff;
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+  --overlay-text: #fff;
+  --fallback-text-color: #999;
+}
+body {
+  background-color: #000 !important;
+  color: #fff;
+}
+

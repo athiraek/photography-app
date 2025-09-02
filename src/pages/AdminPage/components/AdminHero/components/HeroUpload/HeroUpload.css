@@ -1,0 +1,230 @@
+/* AdminHeroView.css - Dark Theme */
+
+.admin-hero-view {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background-color: #0f172a;
+  min-height: 100vh;
+}
+
+.admin-hero-view h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 2rem;
+  text-align: center;
+  border-bottom: 3px solid #6366f1;
+  padding-bottom: 0.75rem;
+}
+
+.hero-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.hero-image-card {
+  background: #1e293b;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid #334155;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  border-color: #475569;
+}
+
+.hero-image-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 2px solid #334155;
+  transition: border-color 0.3s ease;
+}
+
+.hero-image-card img:hover {
+  border-color: #6366f1;
+}
+
+.hero-image-card input[type="file"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px dashed #475569;
+  border-radius: 8px;
+  background-color: #334155;
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.hero-image-card input[type="file"]:hover {
+  border-color: #6366f1;
+  background-color: #4338ca;
+  color: #e0e7ff;
+}
+
+.hero-image-card input[type="file"]:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.hero-image-card input[type="file"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #334155;
+  border-color: #475569;
+}
+
+/* Loading state */
+.admin-hero-view.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.hero-image-card.loading::after {
+  content: "Uploading...";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 41, 59, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #6366f1;
+  border-radius: 12px;
+}
+
+/* Empty state */
+.hero-image-grid:empty::after {
+  content: "No hero images found. Upload some images to get started.";
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #94a3b8;
+  font-style: italic;
+  padding: 3rem;
+  background-color: #1e293b;
+  border-radius: 12px;
+  border: 2px dashed #475569;
+}
+
+/* Responsive Design */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .admin-hero-view {
+    padding: 1.5rem 1rem;
+  }
+
+  .admin-hero-view h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-image-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .hero-image-card {
+    padding: 1.25rem;
+  }
+
+  .hero-image-card img {
+    height: 180px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .admin-hero-view {
+    padding: 1rem 0.75rem;
+  }
+
+  .admin-hero-view h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .hero-image-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hero-image-card {
+    padding: 1rem;
+  }
+
+  .hero-image-card img {
+    height: 160px;
+  }
+
+  .hero-image-card input[type="file"] {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 320px) {
+  .admin-hero-view {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .hero-image-card img {
+    height: 140px;
+  }
+
+  .hero-image-card input[type="file"] {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Focus and accessibility improvements */
+.hero-image-card input[type="file"]:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .hero-image-card {
+    border: 2px solid #f1f5f9;
+  }
+
+  .hero-image-card input[type="file"] {
+    border-color: #f1f5f9;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .hero-image-card {
+    transition: none;
+  }
+
+  .hero-image-card:hover {
+    transform: none;
+  }
+
+  .hero-image-card input[type="file"] {
+    transition: none;
+  }
+}

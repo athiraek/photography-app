@@ -1,0 +1,412 @@
+/* TestimonialUpload.css - Modern Responsive Form Design */
+
+/* Container */
+.testimonial-upload {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.1),
+    0 10px 25px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-upload::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Header */
+.testimonial-upload h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 2rem 0;
+  text-align: center;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+.testimonial-upload h3::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+/* Form Styling */
+.testimonial-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Input and Textarea Shared Styles */
+.testimonial-form input,
+.testimonial-form textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  border-radius: 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  outline: none;
+  resize: none;
+}
+
+.testimonial-form input:focus,
+.testimonial-form textarea:focus {
+  border-color: #667eea;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 0 0 4px rgba(102, 126, 234, 0.1),
+    0 8px 25px rgba(102, 126, 234, 0.15);
+  transform: translateY(-2px);
+}
+
+.testimonial-form input::placeholder,
+.testimonial-form textarea::placeholder {
+  color: #6b7280;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.testimonial-form input:focus::placeholder,
+.testimonial-form textarea:focus::placeholder {
+  color: #9ca3af;
+}
+
+/* Input Specific */
+.testimonial-form input {
+  height: 56px;
+  position: relative;
+}
+
+/* Textarea Specific */
+.testimonial-form textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* Submit Button */
+.testimonial-form button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.5rem;
+}
+
+.testimonial-form button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.testimonial-form button:hover::before {
+  left: 100%;
+}
+
+.testimonial-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+}
+
+.testimonial-form button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.testimonial-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+/* Success Message */
+.success {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  margin: 1.5rem 0 0 0;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
+  animation: slideInUp 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.success::before {
+  content: '✓';
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Error Message */
+.error {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  margin: 1.5rem 0 0 0;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.2);
+  animation: slideInUp 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.error::before {
+  content: '⚠';
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.testimonial-upload {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Loading State */
+.testimonial-form button.loading {
+  position: relative;
+  color: transparent;
+}
+
+.testimonial-form button.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .testimonial-upload {
+    margin: 1rem;
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  .testimonial-upload h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonial-form {
+    gap: 1.25rem;
+  }
+
+  .testimonial-form input,
+  .testimonial-form textarea {
+    padding: 0.875rem 1rem;
+    border-radius: 14px;
+  }
+
+  .testimonial-form input {
+    height: 52px;
+  }
+
+  .testimonial-form textarea {
+    min-height: 100px;
+  }
+
+  .testimonial-form button {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-upload {
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .testimonial-upload h3 {
+    font-size: 1.5rem;
+  }
+
+  .testimonial-form input,
+  .testimonial-form textarea {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    border-radius: 12px;
+  }
+
+  .testimonial-form input {
+    height: 48px;
+  }
+
+  .testimonial-form button {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+    border-radius: 12px;
+  }
+
+  .success,
+  .error {
+    padding: 0.875rem 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .testimonial-upload {
+    background: rgba(17, 24, 39, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .testimonial-form input,
+  .testimonial-form textarea {
+    background: rgba(31, 41, 55, 0.8);
+    border-color: rgba(102, 126, 234, 0.3);
+    color: #f9fafb;
+  }
+
+  .testimonial-form input::placeholder,
+  .testimonial-form textarea::placeholder {
+    color: #9ca3af;
+  }
+
+  .testimonial-form input:focus,
+  .testimonial-form textarea:focus {
+    background: rgba(31, 41, 55, 0.95);
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .testimonial-upload {
+    border: 3px solid #000;
+  }
+
+  .testimonial-form input,
+  .testimonial-form textarea {
+    border: 2px solid #000;
+  }
+
+  .testimonial-form button {
+    border: 2px solid #000;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus Indicators */
+.testimonial-form input:focus-visible,
+.testimonial-form textarea:focus-visible,
+.testimonial-form button:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .testimonial-upload {
+    box-shadow: none;
+    border: 2px solid #000;
+    background: white;
+  }
+
+  .testimonial-form button {
+    background: #333;
+    color: white;
+  }
+}
