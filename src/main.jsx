@@ -7,7 +7,7 @@ import "./assets/css/bootstrap.min.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/photography-app">
+    <BrowserRouter basename="/photography-app/">
       <App />
     </BrowserRouter>
   </StrictMode>
