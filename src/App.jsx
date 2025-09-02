@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/HomePage/Home";
 import Contact from "./pages/ContactPage/Contact";
@@ -12,13 +12,13 @@ import AdminGalleryPage from "./pages/AdminPage/components/AdminGalleryPage/Admi
 import AdminHero from "./pages/AdminPage/components/AdminHero/AdminHero";
 import ProtectedRoute from "./utils/ProtectedRoute";
 import IntroVideo from "./pages/IntroVideo/IntroVideo";
+import AdminAboutPage from "./pages/AdminPage/components/AdminAbout/AdminAboutPage";
 
 import "./assets/css/themify-icons.css";
 import "./assets/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./App.css";
-import AdminAboutPage from "./pages/AdminPage/components/AdminAbout/AdminAboutPage";
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -30,50 +30,48 @@ function App() {
 
       {/* Main app content */}
       {!showIntro && (
-        <BrowserRouter basename="/delivery-app">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/service" element={<ServicePage />} />
-            <Route path="/voraAdmin" element={<AdminPage />} />
-            
-            {/* Protected admin routes */}
-            <Route
-              path="/admin/gallery"
-              element={
-                <ProtectedRoute>
-                  <AdminGalleryPage />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/admin/testimonial"
-              element={
-                <ProtectedRoute>
-                  <AdminTestimonialPage />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/admin/hero"
-              element={
-                <ProtectedRoute>
-                  <AdminHero />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/admin/about"
-              element={
-                <ProtectedRoute>
-                  <AdminAboutPage />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
-        </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/service" element={<ServicePage />} />
+          <Route path="/voraAdmin" element={<AdminPage />} />
+
+          {/* Protected admin routes */}
+          <Route
+            path="/admin/gallery"
+            element={
+              <ProtectedRoute>
+                <AdminGalleryPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/testimonial"
+            element={
+              <ProtectedRoute>
+                <AdminTestimonialPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/hero"
+            element={
+              <ProtectedRoute>
+                <AdminHero />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/about"
+            element={
+              <ProtectedRoute>
+                <AdminAboutPage />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
       )}
     </>
   );
