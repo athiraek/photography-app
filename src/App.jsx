@@ -30,7 +30,7 @@ function App() {
 
       {/* Main app content */}
       {!showIntro && (
-        <BrowserRouter>
+        <BrowserRouter basename="/delivery-app">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
